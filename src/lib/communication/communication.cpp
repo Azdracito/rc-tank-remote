@@ -9,7 +9,7 @@ void Communication::initialize() {
         ESP.restart();
     }
 
-    esp_now_register_send_cb(onDataSent);
+    // esp_now_register_send_cb(onDataSent);
 
     esp_now_peer_info_t peerInfo{};
     memcpy(peerInfo.peer_addr, BROADCAST_ADDRESS, 6);
@@ -25,7 +25,7 @@ void Communication::initialize() {
 
 void Communication::sendJoystickData(const JoystickData& data) const {
     esp_err_t result = esp_now_send(BROADCAST_ADDRESS, reinterpret_cast<const uint8_t*>(&data), sizeof(data));
-    Serial.println(result == ESP_OK ? "Sent successfully" : "Failed to send data");
+    // Serial.println(result == ESP_OK ? "Sent successfully" : "Failed to send data");
 }
 
 void Communication::onDataSent(const uint8_t* macAddr, esp_now_send_status_t status) {

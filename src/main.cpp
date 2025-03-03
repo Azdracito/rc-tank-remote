@@ -9,12 +9,12 @@ void setup() {
   pinMode(PIN_JOYSTICK_X, INPUT);
   pinMode(PIN_JOYSTICK_Y, INPUT);
 
-  communication.initialize();
   joystick.calibrate();
+  communication.initialize();
 }
 
 void loop() {
   JoystickData joystickData = joystick.readValues();
   communication.sendJoystickData(joystickData);
-  delay(50);
+  delay(100);
 }

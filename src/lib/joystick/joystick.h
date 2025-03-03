@@ -5,9 +5,10 @@
 
 constexpr int MIN_ANALOG_VALUE = 0;
 constexpr int MAX_ANALOG_VALUE = 4095;
-constexpr int DEAD_ZONE = 20;
+constexpr int DEAD_ZONE = 200;
 constexpr int MAPPED_MIN = -100;
 constexpr int MAPPED_MAX = 100;
+constexpr int MAX_CALIBRATE = 100;
 
 constexpr int PIN_JOYSTICK_X = 35;
 constexpr int PIN_JOYSTICK_Y = 34;
